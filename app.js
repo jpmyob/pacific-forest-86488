@@ -7,8 +7,11 @@ var server = http.createServer(function (request, response) {
   response.end("Hello World\n");
 });
 
+// dynamic port to avoid hosting
+var port = Number( process.env.PORT || 3000 );
+
 // Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(3000);
+server.listen( port );
 
 // Put a friendly message on the terminal
-console.log("Server running at Yippidy bipidy bop");
+console.log("Server running at Yippidy bipidy bop - port: " + port);
